@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "name": "赵家花园村",
+  "address": "新皂镇",
+  "tag":["垂钓","采摘","游泳"],
+  "classify": ["康养","土货","景点","民宿","民俗"],
+  "intro": "      中心村是四川省绵阳涪城区塘汛镇下辖的行政村，相邻，人好，物华天宝，人杰地灵。物产丰富，集休闲养生农场采摘于一体的先进乡村。涪城区境内丘陵起伏，沟谷纵横，地势西北高，东南低，最高海拔693米，最低海,",
+  "panorama":"http://quanjing.sunlue.com/",
+  "video": "../../static/video/1.mp4",
+  "audio": "../../static/audio/1.mp3",
+  "photo": ["../../static/img/villageBanner1.jpg","../../static/img/villageBanner2.jpg"],
+  "like" : "999",
+  "share": "543",
+  "comment": "643"
+}

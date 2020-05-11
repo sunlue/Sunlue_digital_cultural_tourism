@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "赵家花园村",
+    "address": "新皂镇",
+    "imgUrl": "../../static/img/hot1.jpg",
+    "villageType": [
+      "康养",
+      "农场",
+      "民宿",
+      "景点",
+      "民俗"
+    ],
+    "like": "1000",
+    "comment": "99",
+    "look": "100",
+    "isLike": true,
+    "lng": 104.659992,
+    "lat": 31.419814
+  },
+  {
+    "id": 2,
+    "name": "幸福村",
+    "address": "吴家镇",
+    "imgUrl": "../../static/img/hot2.jpg",
+    "villageType": [
+      "康养",
+      "景点",
+      "民俗"
+    ],
+    "like": "91",
+    "comment": "199",
+    "look": "1001",
+    "isLike": false,
+    "lng": 104.669389,
+    "lat": 31.407366
+  },
+  {
+    "id": 3,
+    "name": "工龙村",
+    "address": "丰谷镇",
+    "imgUrl": "../../static/img/hot3.jpg",
+    "villageType": [
+      "民宿",
+      "景点",
+      "民俗"
+    ],
+    "like": "91",
+    "comment": "19",
+    "look": "10",
+    "isLike": false,
+    "lng": 104.835283,
+    "lat": 31.352043
+  },
+  {
+    "id": 4,
+    "name": "新观寺村",
+    "address": "金家林街道",
+    "imgUrl": "../../static/img/hot4.jpg",
+    "villageType": [
+      "康养",
+      "农场"
+    ],
+    "like": "111",
+    "comment": "29",
+    "look": "101",
+    "isLike": false,
+    "lng": 104.656658,
+    "lat": 31.508438
+  },
+  {
+    "id": 5,
+    "name": "戈家庙村",
+    "address": "普明街道",
+    "imgUrl": "../../static/img/hot5.jpg",
+    "villageType": [
+      "康养",
+      "农场",
+      "民俗"
+    ],
+    "like": "12",
+    "comment": "99",
+    "look": "120",
+    "isLike": false,
+    "lng": 104.643473,
+    "lat": 31.486505
+  },
+  {
+    "id": 6,
+    "name": "冯家弯村",
+    "address": "磨家镇",
+    "imgUrl": "../../static/img/hot1.jpg",
+    "villageType": [
+      "康养",
+      "农场",
+      "民俗"
+    ],
+    "like": "11",
+    "comment": "99",
+    "look": "144",
+    "isLike": true,
+    "lng": 104.610686,
+    "lat": 31.454018
+  },
+  {
+    "id": 7,
+    "name": "下龙溪村",
+    "address": "青义镇",
+    "imgUrl": "../../static/img/hot2.jpg",
+    "villageType": [
+      "民宿",
+      "景点",
+      "民俗"
+    ],
+    "like": "100",
+    "comment": "99",
+    "look": "168",
+    "isLike": false,
+    "lng": 104.722482,
+    "lat": 31.517815
+  }
+]

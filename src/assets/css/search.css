@@ -1,0 +1,185 @@
+.news-box {
+  padding: 40px 0 210px;
+  min-height: 56vh;
+  background: url(../../../static/images/homeNewsBg.png) no-repeat center bottom
+}
+
+.news-box .list-box {
+  transition: .3s;
+  padding: 6px;
+  height: 154px
+}
+
+.news-box .list-box:hover {
+  background-color: #37cf9f
+}
+
+.news-box .list-box:hover .name,
+.news-box .list-box:hover .news-day,
+.news-box .list-box:hover .news-year,
+.news-box .list-box:hover .intro {
+  color: #fff
+}
+
+.news-box .list-box:hover .news-date::after {
+  background-color: #fff
+}
+
+.news-box .container {
+  max-width: 1500px
+}
+
+.news-box .container .img-box {
+  width: 100%;
+  height: 142px
+}
+
+.news-box .container .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.news-box .container .news-date {
+  position: relative
+}
+
+.news-box .container .news-date::after {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 87px;
+  background-color: #37cf9f;
+  left: 0;
+  top: 24px;
+  transition: .3s
+}
+
+.news-box .container .news-day {
+  transition: .3s;
+  font-size: 28px;
+  color: #999;
+  text-align: center;
+  margin: 35px 0 0
+}
+
+.news-box .container .news-year {
+  transition: .3s;
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  margin: 0
+}
+
+.news-box .container .name {
+  transition: .3s;
+  font-size: 24px;
+  color: #333;
+  margin: 30px 0 0
+}
+
+.news-box .container .intro {
+  transition: .3s;
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical
+}
+
+.public-banner .search-box {
+  position: absolute;
+  bottom: 62px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.public-banner .search-box .name {
+  display: inline-block;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 300;
+  margin-right: .9em
+}
+
+.public-banner .search-box .input-box {
+  display: inline-block;
+  font-size: 16px;
+  height: 47px;
+  position: relative
+}
+
+.public-banner .search-box .input-box .search-input {
+  width: 390px;
+  height: 100%;
+  border-radius: 4px;
+  background: none;
+  border: 2px solid #fff;
+  padding-left: 24px;
+  color: #fff
+}
+
+.public-banner .search-box .input-box .search-input::placeholder {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300
+}
+
+.public-banner .search-box .input-box .search-btn {
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  right: 26px;
+  top: 11.5px;
+  background-image: url(../../../static/images/searchPageBtn.png);
+  cursor: pointer
+}
+
+@media screen and (max-width: 992px) {
+  .public-banner .search-box {
+    text-align: center;
+    width: 90%
+  }
+
+  .public-banner .search-box .input-box {
+    height: 35px
+  }
+
+  .public-banner .search-box .input-box .search-input {
+    width: 100%
+  }
+
+  .public-banner .search-box .input-box .search-btn {
+    top: calc(50% - 12px);
+    right: 10px
+  }
+
+  .public-banner .search-box .name {
+    font-size: 16px
+  }
+
+  .news-box {
+    padding: 40px 0
+  }
+
+  .news-box .container .name {
+    margin-top: 10px;
+    font-size: 16px
+  }
+
+  .news-box .container .intro {
+    font-size: 12px
+  }
+
+  .news-box .list-box {
+    height: auto
+  }
+}
+
+/*# sourceMappingURL=search.css.map */

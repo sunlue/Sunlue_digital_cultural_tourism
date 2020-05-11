@@ -1,0 +1,38 @@
+.village-name{
+  margin: 56px 20px 0 15px;
+  color: #37cf9f;
+  font-size: 24px;
+}
+.inside-box {
+  .head-box {
+    .head-list-box {
+      margin: 0 36px;
+
+      .head-list {
+        font-size: 18px;
+        width: calc(4em + 60px);
+        text-align: center;
+      }
+
+      @for $i from 1 through 5 {
+        li:nth-child(#{$i}).active ~ li:last-child::after {
+          left: 100% * ($i - 5);
+        }
+      }
+
+      li:nth-child(5).active:last-child::after {
+        left: 0;
+      }
+
+      @for $i from 1 through 5 {
+        li:nth-child(#{$i}):hover ~ li:last-child::after {
+          left: 100% * ($i - 5);
+        }
+      }
+
+      li:nth-child(5):last-child:last-child:hover::after {
+        left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,205 @@
+<krpano version="1.20" onstart="addClassBtn();createHotspot()">
+
+	<style name="class_text" keep="true" height="120" width="40" background="false" css="color: #000;font-size: 16px;font-family:STKaiti,KaiTi,KaiTi_GB2312;padding:30px 10px;"/>
+
+	<style name="class_text_white" keep="true" height="120" width="40" background="false" css="color: #fff;font-size: 16px;font-family:STKaiti,KaiTi,KaiTi_GB2312;padding:30px 10px;"/>
+
+    <style name="class_hotspot" zoom="false" url="%SWFPATH%/images/down.png" keep="true" width="19" height="15" />
+    <style name="class_hotspot_img" zoom="false" keep="true" width="40" height="30" />
+    <style name="class_hotspot_text" background="false" css="color:#fff;" zoom="false" keep="true" autowidth="true" autoheight="true" oy="-25"/>
+
+	<layer name="plane" background="false" crop="0|0|112|68" url="%SWFPATH%/images/plane.png" align="centertop" width="112" height="68" x="0" y="10" scale="0.8" alpha="1" keep="true" onclick="showClass();class_skip();changBtnBgWidth()" linkedscene="scene_1" visible="false"/>
+
+    <class_list name="class_list_0" html="分类一">
+        <class_item name="class_item_0_0" images="%SWFPATH%/panos/2.tiles/thumb.jpg" ath="-96.027" atv="16.617" linkedscene="scene_2" html="展示品一"/>
+        <class_item name="class_item_0_1" images="%SWFPATH%/panos/3.tiles/thumb.jpg" ath="-33.525" atv="14.512" linkedscene="scene_3" html="展示品二"/>
+        <class_item name="class_item_0_2" images="%SWFPATH%/panos/4.tiles/thumb.jpg" ath="-64.055" atv="16.318" linkedscene="scene_4" html="展示品三"/>
+    </class_list>
+
+    <class_list name="class_list_1" html="分类二">
+        <class_item name="class_item_1_0" images="%SWFPATH%/panos/5.tiles/thumb.jpg" ath="-100.350" atv="30.432" linkedscene="scene_5" html="展示品四"/>
+        <class_item name="class_item_1_1" images="%SWFPATH%/panos/6.tiles/thumb.jpg" ath="-63.597" atv="33.147" linkedscene="scene_6" html="展示品五"/>
+    </class_list>
+
+    <class_list name="class_list_2" html="分类三">
+        <class_item name="class_item_2_0" images="%SWFPATH%/panos/7.tiles/thumb.jpg" ath="-29.356" atv="27.942" linkedscene="scene_7" html="展示品六"/>
+        <class_item name="class_item_2_1" images="%SWFPATH%/panos/8.tiles/thumb.jpg" ath="-63.341" atv="50.606" linkedscene="scene_8" html="展示品七"/>
+    </class_list>
+
+
+    <!-- 添加分类按钮 -->
+    <action name="addClassBtn">
+        for(set(i,0),i LT class_list.count,inc(i),
+            calc(classname, 'class_btn_' + i);
+            addlayer(get(classname));
+            set(layer[get(classname)],
+                url='%SWFPATH%/images/route_bg.png',
+                keep=true,
+                align='righttop',
+                crop='0|0|69|228',
+                width= '40',
+                height= '120',
+                x=calc(i * 40 + i * 15 + 20),
+                y='20',
+                scale='1',
+                alpha="1"
+            );
+            calc(classtext, 'class_btn_text_' + i);
+            addlayer(get(classtext));
+            layer[get(classtext)].loadstyle(class_text);
+            set(layer[get(classtext)], 
+                keep=true, 
+                parent=get(classname), 
+                type="text",
+                html=get(class_list[get(i)].html),
+                num=get(i),
+            );
+            set(layer[get(classtext)].onover,changBtnBg();showHotspot());
+
+        );
+    </action>
+
+    <!-- 改变分类按钮背景图片 -->
+    <action name="changBtnBg" scope="local" >
+        for(set(i,0),i LT class_list.count,inc(i),
+            set(item,calc('class_btn_'+i));
+            set(item_text,calc('class_btn_text_'+i));
+
+            set(layer[get(item)].url,'%SWFPATH%/images/route_bg.png');
+            layer[get(item_text)].loadstyle(class_text);
+        );
+        set(layer[get(caller.parent)].url,'%SWFPATH%/images/route_active_bg.png');
+        caller.loadstyle(class_text_white);
+    </action>
+
+    <!-- 改变分类全部按钮背景图片 -->
+    <action name="changBtnBgWidth" scope="local" >
+        for(set(i,0),i LT class_list.count,inc(i),
+            set(item,calc('class_btn_'+i));
+            set(item_text,calc('class_btn_text_'+i));
+
+            set(layer[get(item)].url,'%SWFPATH%/images/route_bg.png');
+            layer[get(item_text)].loadstyle(class_text);
+        );
+    </action>
+
+    <!-- 进入视图创建分类热点 -->
+    <action name="createHotspot">
+        for(set(i,0),i LT class_list.count,inc(i),
+            for(set(j,0),j LT class_list[get(i)].class_item.count,inc(j),
+                calc(class_hot, 'class_hot' + i + '/' + j);
+                addhotspot(get(class_hot));
+                set(hotspot[get(class_hot)],
+                    ath = calc(class_list[get(i)].class_item[get(j)].ath),
+                    atv = calc(class_list[get(i)].class_item[get(j)].atv),
+                    linkedscene = get(class_list[get(i)].class_item[get(j)].linkedscene),
+                    oy = 18,
+                    distorted = 'false',
+                    onclick = 'class_skip();hideClass()',
+                );
+                hotspot[get(class_hot)].loadstyle(class_hotspot);
+                
+                calc(class_hot_img, 'class_hot_img' + i + '/' + j);
+                addhotspot(get(class_hot_img));
+                set(hotspot[get(class_hot_img)],
+                    url=get(class_list[get(i)].class_item[get(j)].images),
+                    crop= get(skin_settings.thumbs_crop),
+                    ath= calc(class_list[get(i)].class_item[get(j)].ath),
+                    atv= calc(class_list[get(i)].class_item[get(j)].atv),
+                    distorted="false",
+                    onclick="class_skip();hideClass()",
+                    linkedscene=get(class_list[get(i)].class_item[get(j)].linkedscene),
+                    parent=get(class_hot)
+                );
+                hotspot[get(class_hot_img)].loadstyle(class_hotspot_img);
+
+                calc(class_hot_text, 'class_hot_text' + i + '/' + j);
+                addhotspot(get(class_hot_text));
+                set(hotspot[get(class_hot_text)],
+                    type="text",
+                    html=get(class_list[get(i)].class_item[get(j)].html),
+                    ath= calc(class_list[get(i)].class_item[get(j)].ath),
+                    atv= calc(class_list[get(i)].class_item[get(j)].atv),
+                    distorted="false",
+                    onclick="class_skip();hideClass()",
+                    linkedscene=get(class_list[get(i)].class_item[get(j)].linkedscene),
+                    parent=get(class_hot)
+                );
+                hotspot[get(class_hot_text)].loadstyle(class_hotspot_text);
+            );
+        );
+    </action>
+
+    <!-- 跳转其他视图 -->
+    <action name="class_skip" scope="local" >
+        set(hs_linkedscene, get(caller.linkedscene));
+        skin_loadscene(get(hs_linkedscene),get(skin_settings.loadscene_blend));
+    </action>
+
+    <!-- 显示选中类别热点 -->
+    <action name="showHotspot" scope="local" >
+        for(set(i,0),i LT class_list.count,inc(i),
+            for(set(j,0),j LT class_list[get(i)].class_item.count,inc(j),
+                calc(class_hot, 'class_hot' + i + '/' + j);
+                calc(class_hot_img, 'class_hot_img' + i + '/' + j);
+                calc(class_hot_text, 'class_hot_text' + i + '/' + j);
+                set(classname,get(caller.name));
+                if(i == get(caller.num),
+                    set(hotspot[get(class_hot_text)].visible,true);
+                    set(hotspot[get(class_hot)].visible,true);
+                    set(hotspot[get(class_hot_img)].visible,true);,
+                    set(hotspot[get(class_hot_text)].visible,false);
+                    set(hotspot[get(class_hot)].visible,false);
+                    set(hotspot[get(class_hot_img)].visible,false);
+                );
+
+            );
+        );
+    </action>
+
+    <!-- 显示所有分类热点 -->
+    <action name="showClass" scope="local">
+        delayedcall(0.3,
+            for(set(i,0),i LT class_list.count,inc(i),
+                calc(classname, 'class_btn_' + i);
+                calc(classtext, 'class_btn_text_' + i);
+                set(layer[get(classname)].visible,true);
+                set(layer[get(classtext)].visible,true);
+
+                for(set(j,0),j LT class_list[get(i)].class_item.count,inc(j),
+                    calc(class_hot, 'class_hot' + i + '/' + j);
+                    calc(class_hot_img, 'class_hot_img' + i + '/' + j);
+                    calc(class_hot_text, 'class_hot_text' + i + '/' + j);
+                    set(hotspot[get(class_hot)].visible,true);
+                    set(hotspot[get(class_hot_img)].visible,true);
+                    set(hotspot[get(class_hot_text)].visible,true);
+                );
+            );
+            set(layer[plane].visible,false);
+        );
+    </action>
+
+    <!-- 隐藏所有分类热点 -->
+    <action name="hideClass" scope="local">
+        for(set(i,0),i LT class_list.count,inc(i),
+            calc(classname, 'class_btn_' + i);
+            calc(classtext, 'class_btn_text_' + i);
+            set(layer[get(classname)].visible,false);
+            set(layer[get(classtext)].visible,false);
+
+            for(set(j,0),j LT class_list[get(i)].class_item.count,inc(j),
+                calc(class_hot, 'class_hot' + i + '/' + j);
+                calc(class_hot_img, 'class_hot_img' + i + '/' + j);
+                calc(class_hot_text, 'class_hot_text' + i + '/' + j);
+                set(hotspot[get(class_hot)].visible,false);
+                set(hotspot[get(class_hot_img)].visible,false);
+                set(hotspot[get(class_hot_text)].visible,false);
+            );
+        );
+
+        delayedcall(0.3,set(layer[plane].visible,true));
+    </action>
+
+
+
+</krpano>

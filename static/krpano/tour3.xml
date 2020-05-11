@@ -1,0 +1,55 @@
+<krpano version="1.20" title="村游涪城" >
+
+    <include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings littleplanetintro="true"
+	               followmousecontrol="false"
+                   title="false"
+                   autotour="true"
+	               thumbs_text="true"
+                   thumbs_width="140" thumbs_height="90" thumbs_padding="25" thumbs_crop="0|0|240|160"
+                   loadingtext="加载中..."
+	               layout_width="100%"
+	               layout_maxwidth="100%"
+                   controlbar_width="-24"
+                   controlbar_height="0"
+                   controlbar_offset="80"
+                   controlbar_overlap.no-fractionalscaling="0"
+                   design_bgcolor="0x000000"
+                   design_bgalpha="0.1"
+                   design_bgborder="0"
+                   design_bgroundedge="0"
+                   design_bgshadow="0 0 0 0x000000 0"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	<scene name="scene_4" title="4" onstart="" lat="" lng="" heading="">
+
+        <view hlookat="-54.205" vlookat="45.072" fovtype="MFOV" fov="110.000" maxpixelzoom="2.0" fovmin="90" fovmax="130" limitview="auto" />
+
+        <preview url="panos/4.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/4.tiles/pano_%s.jpg" />
+        </image>
+
+
+    </scene>
+
+
+
+</krpano>

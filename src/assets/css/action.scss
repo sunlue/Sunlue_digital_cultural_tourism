@@ -1,0 +1,130 @@
+$mainColor: #37cf9f;
+.content-box {
+  padding: 60px 0 210px;
+  background: url(../../../static/images/homeNewsBg.png) no-repeat center bottom;
+  min-height: 60vh;
+
+  .container {
+    max-width: 1500px;
+  }
+
+  .list-box {
+    margin-bottom: 40px;
+
+    &:hover {
+      .img-box {
+        img {
+          transform: scale(1.1);
+        }
+      }
+
+      .date-day, .date-year, .name-box {
+        color: $mainColor;
+      }
+
+      .date-box {
+        &::after {
+          background-color: $mainColor;
+        }
+      }
+
+    }
+  }
+
+  .img-box {
+    width: 100%;
+    overflow: hidden;
+    height: 226px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .3s;
+    }
+  }
+
+  .box {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .text-box {
+    background-color: #f6f6f6;
+    padding: 20px 20px 20px 0;
+  }
+
+  .date-box {
+    float: left;
+    width: 23%;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 65%;
+      background-color: #aaa;
+      right: 0;
+      top: 17.5%;
+      transition: .3s;
+    }
+
+    .date-day {
+      text-align: center;
+      font-size: 28px;
+      color: #aaaaaa;
+      margin: 0;
+      line-height: 1em;
+      transition: .3s;
+    }
+
+    .date-year {
+      text-align: center;
+      font-size: 14px;
+      color: #aaaaaa;
+      line-height: 1em;
+      margin: 0;
+      transition: .3s;
+    }
+  }
+
+  .name-box {
+    float: right;
+    width: 65%;
+    font-size: 22px;
+    color: #666;
+    line-height: 1.2em;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    transition: .3s;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .content-box{
+    padding: 20px 0 ;
+
+    .img-box{
+      height: 160px;
+    }
+    .text-box{
+      padding: 10px;
+    }
+    .date-box {
+      .date-day{
+        font-size: 18px;
+      }
+    }
+    .name-box{
+      font-size: 14px;
+    }
+  }
+}

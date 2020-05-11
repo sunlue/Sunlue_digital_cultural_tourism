@@ -1,0 +1,186 @@
+.news-box {
+  padding: 40px 0 210px;
+  min-height: 56vh;
+  background: url(../../../static/images/homeNewsBg.png) no-repeat center bottom;
+
+  .list-box {
+    transition: .3s;
+    padding: 6px;
+    height: 154px;
+
+    &:hover {
+      background-color: #37cf9f;
+
+      .name, .news-day, .news-year, .intro {
+        color: #fff;
+      }
+
+      .news-date {
+        &::after {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  .container {
+    max-width: 1500px;
+
+    .img-box {
+      width: 100%;
+      height: 142px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .news-date {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 87px;
+        background-color: #37cf9f;
+        left: 0;
+        top: 24px;
+        transition: .3s;
+      }
+    }
+
+    .news-day {
+      transition: .3s;
+      font-size: 28px;
+      color: #999;
+      text-align: center;
+      margin: 35px 0 0;
+    }
+
+    .news-year {
+      transition: .3s;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+      margin: 0;
+    }
+
+    .name {
+      transition: .3s;
+      font-size: 24px;
+      color: #333;
+      margin: 30px 0 0;
+    }
+
+    .intro {
+      transition: .3s;
+      font-size: 14px;
+      color: #999;
+      margin: 0;
+      text-overflow: -o-ellipsis-lastline;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.public-banner {
+  .search-box {
+    position: absolute;
+    bottom: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .name {
+      display: inline-block;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 300;
+      margin-right: .9em;
+    }
+
+    .input-box {
+      display: inline-block;
+      font-size: 16px;
+      height: 47px;
+      position: relative;
+
+      .search-input {
+        width: 390px;
+        height: 100%;
+        border-radius: 4px;
+        background: none;
+        border: 2px solid rgb(255, 255, 255);
+        padding-left: 24px;
+        color: #fff;
+
+        &::placeholder {
+          color: #fff;
+          font-size: 16px;
+          font-weight: 300;
+        }
+      }
+
+      .search-btn {
+        width: 24px;
+        height: 24px;
+        display: block;
+        position: absolute;
+        right: 26px;
+        top: 11.5px;
+        background-image: url(../../../static/images/searchPageBtn.png);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .public-banner {
+    .search-box {
+      text-align: center;
+      width: 90%;
+
+      .input-box {
+        height: 35px;
+
+        .search-input {
+          width: 100%;
+        }
+
+        .search-btn {
+          top: calc(50% - 12px);
+          right: 10px;
+        }
+      }
+
+      .name{
+        font-size: 16px;
+      }
+    }
+  }
+
+  .news-box {
+    padding: 40px 0;
+
+    .container {
+      .name{
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      .intro{
+        font-size: 12px;
+      }
+    }
+    .list-box {
+      height: auto;
+    }
+  }
+}
