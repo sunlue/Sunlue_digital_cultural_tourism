@@ -4,7 +4,7 @@
       <publicHead :show="show" :rightBtn="rightBtn" />
       <div class="banner-img">
         <!-- <iframe width="100%" height="100%" :src="iframeArr[iframeArrIndex]"></iframe> -->
-        <iframe width="100%" height="100%" src="http://720view.sunlue.com/2020/szwl/xcy.html"></iframe>
+        <iframe width="100%" height="100%" src="http://720view.sunlue.com/2020/szwl/zyt.html"></iframe>
         <div class="iframe-box-bg"></div>
       </div>
       <div class="banner-text"><img src="../../static/images/homeBnanerText.png" class="img-fluid" alt="" /></div>
@@ -48,10 +48,10 @@
     </section>
     <section class="main">
       <div class="container">
-        <div class="new-activity" style="position: relative;">
+        <div class="new-activity" style="position: relative;" v-if="false">
           <h2><img src="../../static/images/homeMainTitle_new_active_01.png" /></h2>
-          <img src="../../static/images/homeMainJoin.png" style="position: absolute;right: 0px;z-index: 9999;" />
           <div class="swiper-container" id="activitySwiper" style="height: 300px;">
+            <img src="../../static/images/homeMainJoin.png" style="position: absolute;right: 0px;z-index: 9999;" />
             <div class="swiper-wrapper">
               <div v-for="(list, index) in newsActivityList" class="swiper-slide swiper-list">
                 <div class="img-box"><img :src="list.images" alt="" style="width: 100%;" /></div>
@@ -60,7 +60,10 @@
             <div class="swiper-pagination" style="left: 10px;"></div>
           </div>
         </div>
-        <img src="../../static/images/homeMain.png" style="max-width: 100%;" />
+        <img src="../../static/images/homeMain1.png" style="max-width: 100%;" />
+        <img src="../../static/images/homeMain2.png" style="max-width: 100%;margin-top: 40px;" />
+        <img src="../../static/images/homeMain3.png" style="max-width: 100%;margin-top: 40px;" />
+        <img src="../../static/images/homeMain4.png" style="max-width: 100%;margin-top: 40px;" />
       </div>
     </section>
 
@@ -421,6 +424,6 @@ export default {
   background-image: url('../../static/images/homeBg.png');
   background-repeat: no-repeat;
   background-position: center bottom;
-  padding: 50px 0px 100px 0px;
+  padding: 50px 0px 200px 0px;
 }
 </style>

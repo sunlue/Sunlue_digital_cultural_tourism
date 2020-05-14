@@ -5,7 +5,7 @@
         <h1 class="float-left logo">
           <a href="/">
             <img src="../../static/images/logo.png" v-if="show===1||show>10" alt="logo" title="主页">
-            <img src="../../static/images/logoBlack.png" v-if="show!==1&&show<10" alt="logo" title="主页">
+            <img src="../../static/images/logoRed.png" v-if="show!==1&&show<10" alt="logo" title="主页">
           </a>
         </h1>
         <ul class="float-left list-inline head-list-box">
@@ -21,14 +21,17 @@
           <li class="list-inline-item head-list" :class="{active:show === 4}">
             <a href="/people">名人堂</a>
           </li>
+          <li class="list-inline-item head-list" :class="{active:show === 8}">
+            <a href="/volunteers">志愿者</a>
+          </li>
           <li class="list-inline-item head-list" :class="{active:show === 5}">
             <a href="/experience">体验</a>
           </li>
           <li class="list-inline-item head-list" :class="{active:show === 6}">
-            <a href="/information-home">资讯</a>
+            <a href="http://t.fcvillage.com/pcMap/index.html"target="_blank">云图</a>
           </li>
           <li class="list-inline-item head-list" :class="{active:show === 7}">
-            <a href="http://cm.sunlue.com/" target="_blank">涪城荟</a>
+            <a href="/shop">涪城荟</a>
           </li>
         </ul>
         <div class="float-right login-btn">

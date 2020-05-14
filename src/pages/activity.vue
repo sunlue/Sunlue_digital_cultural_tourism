@@ -2,8 +2,13 @@
   <div id="consult-box" class="inside-box">
     <publicHead :show="show" :rightBtn="true" />
     <img src="../../static/images/activity_banner.png" style="width: 100%;" />
-    <div class="container" style="padding: 38px 0px 50px 0px;">
-      <img src="../../static/images/activity_main.png" />
+    <div class="main">
+      <div class="container-fluid" style="background-color: white;text-align: center;line-height: 142px;height: 142px;">
+        <img src="../../static/images/activity_title.png" style="max-width: 100%;" />
+      </div>
+      <div class="container">
+        <img src="../../static/images/activity_main.png" style="max-width: 100%;margin-top: 40px;" />
+      </div>
     </div>
     <publicFooter />
   </div>
@@ -25,4 +30,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+  html,body{
+    background-color: #FAFAFA;
+  }
+  .main{
+    background-image: url('../../static/images/homeBg.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding: 5px 0px 200px 0px;
+  }
+</style>

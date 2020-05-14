@@ -5,7 +5,9 @@ import login from '@/pages/login'
 import activity from '@/pages/activity'
 import venue from '@/pages/venue'
 import people from '@/pages/people'
+import volunteers from '@/pages/volunteers'
 import experience from '@/pages/experience'
+import shop from '@/pages/shop'
 
 
 import village from '@/pages/village'
@@ -31,8 +33,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: '首页',
       component: home
@@ -41,20 +42,28 @@ export default new Router({
       path: '/activity',
       name: '活动',
       component: activity
-    },{
+    }, {
       path: '/venue',
       name: '场馆',
       component: venue
-    },{
+    }, {
       path: '/people',
-      name: '文化人',
+      name: '名人堂',
       component: people
-    },{
+    }, {
       path: '/experience',
       name: '体验',
       component: experience
+    }, {
+      path: '/volunteers',
+      name: '志愿者',
+      component: volunteers
     },
-    
+    {
+      path:'/shop',
+      name:'涪城荟',
+      component:shop
+    },
     {
       path: '/login',
       name: '登录',
